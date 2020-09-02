@@ -1,4 +1,4 @@
-# Table Of Contents
+# Table OF Contents
 
 1. Introduction
 2. Open COVID-19 datasets
