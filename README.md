@@ -66,11 +66,11 @@ Follow the instructions given in the following link to set up alerts:-
 
 For Public Environment Alerts:- 
 
-[Setup Metric Alerts Public Environment](./datasets/covid-19/definitive-healthcare/customer/Readme.md)
+[Setup Metric Alerts Public Environment](./datasets/covid-19/definitive-healthcare/public/Readme.md)
 
 For Customer Environment Alerts:- 
 
-[Setup Metric Alerts Customer Environment](./datasets/covid-19/definitive-healthcare/public/Readme.md)
+[Setup Metric Alerts Customer Environment](./datasets/covid-19/definitive-healthcare/customer/Readme.md)
 
 ## 8. Configure Data Share
 
