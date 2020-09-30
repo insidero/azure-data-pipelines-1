@@ -1,5 +1,5 @@
 # Introduction
-This document entails the steps that can be followed to set up Continuous Integration and Continuous Delivery for Azure Data Factory. The document comprises of two main parts, the first part entails connecting an existing Azure Data Factory with a Git repository. The second part entails setting up  an Azure DevOps Pipeline that publishes the changes from one ADF to another thereby maintaining multiple environments e.g dev, stage, prod etc.
+This document entails the steps that can be followed to set up Continuous Integration and Continuous Delivery for Azure Data Factory. The document comprises of two main parts, the first part entails connecting an existing Azure Data Factory with a Git repository. The second part entails setting up  an Azure DevOps Pipeline that publishes the changes from one ADF to another thereby maintaining multiple environments e.g dev, stage, prod, etc.
 
 # Connect Azure Data Factory to a Git Repo
 
@@ -35,15 +35,15 @@ This will show a UI blade with a dropdown listing the supported repository types
 5. 
     - Now we have to select a repo to connect this data factory to. Select the repo from the **Git Repository Name** dropdown. (You may create a new one if using Azure DevOps Git)
     
-    - Select **master** as the collaboration branch. This branch will be used for publishing to Azure Data factory. By default it is master. You may change this if you want to deploy/publish resources from another branch.
+    - Select **master** as the collaboration branch. This branch will be used for publishing to Azure Data Factory. By default it is master. You may change this if you want to deploy/publish resources from another branch.
     
     - **Root Folder** is the directory where all of the Data factory resource's JSON files will be copied to. Leave it as '**/**'.
 ![Select Repo type](./images/repo-settings.png)
 6. Click on **Apply** to save the changes.
 
-Here, we have successfully connected an Azure Data factory to a Git Repo. this has saved all of the resource's JSON files in the collaboration branch that we specified. Whenever the ADF is published, it takes all the changes from the collaboration branch, creates the ARM templates for the resources found in the collaboration branch and pushes them into the **adf_publish** branch.
+Here, we have successfully connected an Azure Data Factory to a Git Repo. this has saved all of the resource's JSON files in the collaboration branch that we specified. Whenever the ADF is published, it takes all the changes from the collaboration branch, creates the ARM templates for the resources found in the collaboration branch and pushes them into the **adf_publish** branch.
 
-When we set up the Git Repository and publish the changes from the Data Factory, it only creates the **adf_publish** branch in the repo but doesn't generate the ARM templates as no change is detected. Hence, we must make a change in any of the activities or pipelines in the Data Factory and then publish it. E.g we can change the **Description** for any of the activity and publish that.
+When we set up the Git Repository and publish the changes from the Data Factory, it only creates the **adf_publish** branch in the repo but doesn't generate the ARM templates as no change is detected. Hence, we must make a change in any of the activities or pipelines in the Data Factory and then publish it. E.g we can change the **Description** for any of the activities and publish that.
 
 7. Make a change and publish the changes from the ADF. When we click on Publish from the ADF UI, it automatically creates the **adf_publish** branch, creates the ARM templates for all the resources found in the collaboration branch and pushes them into the **adf_publish branch**.
 
@@ -52,7 +52,7 @@ When we set up the Git Repository and publish the changes from the Data Factory,
  
 ![CICD Flow](./images/cicd-flow.png)
 
-To be able to replicate the resources in this data factory we need the ARM templates that are generated when we publish the changes in the Azure Data Factory. When you click on publish, it takes the changes from the collaboration branch i.e. master in this case, creates ARM templates, and pushes them in the **adf_publish** branch.
+To be able to replicate the resources in this Data Factory we need the ARM templates that are generated when we publish the changes in the Azure Data Factory. When you click on publish, it takes the changes from the collaboration branch i.e. master in this case, creates ARM templates, and pushes them in the **adf_publish** branch.
 
 
 
@@ -75,7 +75,7 @@ After having exctracted the files in the repo. The repository should look like t
 
 ![](./images/extracted-contents.png)
 
-## Step 3. Set up CI/CD in Azure DevOps for Azure  Data factory.
+## Step 3. Set up CI/CD in Azure DevOps for Azure  Data Factory.
 
 1. Navigate to Azure portal, search and open 'Azure DevOps' -> 'My Azure DevOps Organizations'.
 ![Search Devops](../../definitive-healthcare/azure-pipelines-cicd/images/search-azure-devops.png)
@@ -121,7 +121,7 @@ After having exctracted the files in the repo. The repository should look like t
 
 2. dataFactoryName 
 
-    // Name of the service, in this case, it will be the name of the data factory to which you the resources to be deployed to.
+    // Name of the service, in this case, it will be the name of the Data Factory to which you the resources to be deployed to.
     Please note that
 
 3. public-sa-sas-uri 
@@ -158,7 +158,7 @@ After having exctracted the files in the repo. The repository should look like t
 
 2. dataFactoryName 
     
-    // Name of the service, in this case, it will be the name of the data factory
+    // Name of the service, in this case, it will be the name of the Data Factory
 
 3. public-sa-sas-uri 
 
@@ -194,7 +194,7 @@ After having exctracted the files in the repo. The repository should look like t
 
 2. dataFactoryName 
 
-    // Name of the service, in this case, it will be the name of the data factory
+    // Name of the service, in this case, it will be the name of the Data Factory
 
 3. public-sa-sas-uri // SAS URI of the public storage account
 
